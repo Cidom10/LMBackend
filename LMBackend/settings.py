@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 """
 Django settings for LMBackend project.
 
@@ -10,6 +11,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+=======
+>>>>>>> 501f00e8c5bffad53c7af67ce0a573388ba7bd50
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,7 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 SECRET_KEY = 'django-insecure-(d@@vv+8-=pt1qi$bdnha9j^ejyp5dssxgbu33&pmtn)v#0+-5'
+=======
+SECRET_KEY = 'django-insecure-%f0#&#$+3)zpmizj(hxj4%t7gu0m^*=+e4-tunrawu#koq4#r8'
+>>>>>>> 501f00e8c5bffad53c7af67ce0a573388ba7bd50
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,8 +44,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'corsheaders'
     'lessons',
+=======
+    'lessons.apps.LessonsConfig',
+    'rest_framework',
+    'corsheaders'
+>>>>>>> 501f00e8c5bffad53c7af67ce0a573388ba7bd50
 ]
 
 MIDDLEWARE = [
@@ -46,16 +59,51 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+<<<<<<< HEAD
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware'
+=======
+    'corsheaders.middleware.CorsMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000"
+]
+
+CORS_ALLOW_METHODS = [
+'DELETE',
+'GET',
+'OPTIONS',
+'PATCH',
+'POST',
+'PUT',
+]
+
+CORS_ALLOW_HEADERS = [
+'accept',
+'accept-encoding',
+'authorization',
+'content-type',
+'dnt',
+'origin',
+'user-agent',
+'x-csrftoken',
+'x-requested-with',
+>>>>>>> 501f00e8c5bffad53c7af67ce0a573388ba7bd50
 ]
 
 ROOT_URLCONF = 'LMBackend.urls'
 
+<<<<<<< HEAD
 CORS_ORIGIN_ALLOW_ALL = True
 
+=======
+>>>>>>> 501f00e8c5bffad53c7af67ce0a573388ba7bd50
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

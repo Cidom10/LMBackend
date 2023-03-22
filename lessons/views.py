@@ -1,10 +1,17 @@
+<<<<<<< HEAD
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+=======
+from django.shortcuts import get_object_or_404
+from rest_framework.views import APIView
+from rest_framework.response import Response
+>>>>>>> 501f00e8c5bffad53c7af67ce0a573388ba7bd50
 from .models import Lesson, Step, Component
 from .serializers import LessonSerializer, StepSerializer, ComponentSerializer
 
 class LessonList(APIView):
+<<<<<<< HEAD
     def get(self, request):
         lessons = Lesson.objects.all()
         serializer = LessonSerializer(lessons, many=True)
@@ -112,3 +119,32 @@ class ComponentDetail(APIView):
             serializer.save()
             return Response(serializer.data)
        
+=======
+    def get(self, request, id=None):
+
+        if id:
+            data = Lesson.objects.filter(id=id)
+        else:
+            data = Lesson.objects.all()
+        serializer = LessonSerializer(data, many=True)
+        return Response(serializer.data)
+
+class StepList(APIView):
+    def get(self, request, id=None):
+        
+        if id:
+            data = Step.objects.filter(id=id)
+        else:
+            data = Step.objects.all()
+        serializer = StepSerializer(data, many=True)
+        return Response(serializer.data)
+
+class ComponentList(APIView):
+    def get(self, request, id=None):
+        if id:
+            data = Component.objects.filter(id=id)
+        else:
+            data = Component.objects.all()
+        serializer = ComponentSerializer(data, many=True)
+        return Response(serializer.data)
+>>>>>>> 501f00e8c5bffad53c7af67ce0a573388ba7bd50
